@@ -1,3 +1,4 @@
+
 local vu1 = loadstring(game:HttpGet([[https://github.com/Footagesus/WindUI/releases/latest/download/main.lua]]))()
 
 task.spawn(function()
@@ -17,29 +18,24 @@ game:GetService('CoreGui')
 
 local vu6 = game:GetService('TweenService')
 local vu7 = {
-    Primary = Color3.fromRGB(120, 200, 255), -- light blue
-    Secondary = Color3.fromRGB(0, 120, 255), -- blue
-    Dark = Color3.fromRGB(12, 20, 40),
-    Text = Color3.fromRGB(255, 255, 255),
-
-    Orange = Color3.fromRGB(120, 200, 255),
-    DarkOrange = Color3.fromRGB(0, 120, 255),
-    Purple = Color3.fromRGB(120, 200, 255),
-    DarkPurple = Color3.fromRGB(0, 90, 200),
-    Blood = Color3.fromRGB(0, 120, 255),
-    Ghost = Color3.fromRGB(220, 240, 255),
-    Pumpkin = Color3.fromRGB(120, 200, 255),
-    Witch = Color3.fromRGB(0, 120, 255),
-    Midnight = Color3.fromRGB(12, 20, 40),
-    Toxic = Color3.fromRGB(120, 200, 255),
-    Red = Color3.fromRGB(120, 200, 255),
-    Green = Color3.fromRGB(120, 200, 255),
-    Gold = Color3.fromRGB(120, 200, 255),
-    Silver = Color3.fromRGB(200, 230, 255),
-    Blue = Color3.fromRGB(0, 120, 255),
-    Innocent = Color3.fromRGB(120, 200, 255),
-    Sheriff = Color3.fromRGB(0, 120, 255),
-    Murder = Color3.fromRGB(0, 120, 255),
+    Orange = Color3.fromHex('#0434e3'),
+    DarkOrange = Color3.fromHex('#FF4500'),
+    Purple = Color3.fromHex('#9D4EDD'),
+    DarkPurple = Color3.fromHex('#5A189A'),
+    Blood = Color3.fromHex('#8B0000'),
+    Ghost = Color3.fromHex('#E0E0E0'),
+    Pumpkin = Color3.fromHex('#FF7518'),
+    Witch = Color3.fromHex('#6B2E8A'),
+    Midnight = Color3.fromHex('#0D0221'),
+    Toxic = Color3.fromHex('#39FF14'),
+    Red = Color3.fromHex('#FF0000'),
+    Green = Color3.fromHex('#00FF00'),
+    Gold = Color3.fromHex('#FFD700'),
+    Silver = Color3.fromHex('#C0C0C0'),
+    Blue = Color3.fromHex('#1E90FF'),
+    Innocent = Color3.fromHex('#39FF14'),
+    Sheriff = Color3.fromHex('#001e80'),
+    Murder = Color3.fromHex('#e80909'),
 }
 
 local function v15(p8, p9, p10)
@@ -80,17 +76,16 @@ repeat
 until vu16
 
 local vu19 = vu18:CreateWindow({
-
-local vu19 = vu18:CreateWindow({
-    Title = v15('VexloHub', vu7.Primary, vu7.Secondary),
-    Author = 'VexloHub Scripts • Blue Edition',
+    Title = v15('VexloHub', vu7.Red, vu7.Green),
+    Author = 'VexloHub Scripts \u{2022} Latest Version',
     Folder = 'VexloHub',
     Icon = 'zap',
-    Size = UDim2.new(0, 600, 0, 500),
+    NewElements = true,
+    Size = UDim2.new(0, 580, 0, 480),
     Transparent = true,
-    BackgroundTransparency = 0.15,
-    Theme = 'Custom',
-    SideBarWidth = 230,
+    BackgroundTransparency = 0.5,
+    Theme = 'Dark',
+    SideBarWidth = 220,
     HideSearchBar = false,
     ScrollBarEnabled = true,
     OpenButton = {
@@ -99,25 +94,15 @@ local vu19 = vu18:CreateWindow({
         StrokeThickness = 2,
         Enabled = true,
         Draggable = true,
-        Color = ColorSequence.new(
-            Color3.fromRGB(120,200,255),
-            Color3.fromRGB(0,120,255)
-        ),
+        OnlyMobile = false,
+        Color = ColorSequence.new(vu7.Red, vu7.Green),
     },
-
     User = {
         Enabled = true,
         Anonymous = false,
+        Callback = function() end,
     },
 })
-
-vu19:SetTheme({
-    Accent = Color3.fromRGB(0,120,255),
-    Background = Color3.fromRGB(15,25,50),
-    Outline = Color3.fromRGB(0,120,255),
-    Text = Color3.fromRGB(255,255,255),
-})
-
 local vu20 = false
 local vu21 = false
 local vu22 = false
@@ -2652,6 +2637,7 @@ v417:Toggle({
 })
 
 local v420 = v330:Tab({
+local v420 = v330:Tab({
     Title = v15('Murder', vu7.Blood, vu7.Murder),
     Icon = 'skull',
 })
@@ -2745,7 +2731,6 @@ v420:Button({
         end
     end,
 })
-
 local vu423 = nil
 local v424 = v330:Tab({
     Title = v15('Sherrif', vu7.Sherrif, vu7.Sherrif),
@@ -2815,6 +2800,9 @@ v424:Toggle({
                 v429.Active = true
                 v429.TextWrapped = true
 
+                Instance.new('UICorner', v429)
+
+                local v430 = Instance.new('UIStroke', v429)
 local vu423 = nil
 local v424 = v330:Tab({
     Title = v15('Sherrif', vu7.Sherrif, vu7.Sherrif),
@@ -2876,12 +2864,11 @@ v424:Dropdown({
     Desc = 'Choose shooting method',
     Values = {
         {Title = 'Default', Icon = 'target'},
-        {Title = 'Teleport', Icon = 'zap'},
+        {Title = 'Teleport', Icon = 'zap'}
     },
     Value = 'Default',
     Callback = function(p425)
         vu329 = p425.Title
-        vu18:Notify({Title = 'Shot Type', Content = 'Set to: ' .. p425.Title, Icon = 'check-circle', Duration = 2})
     end,
 })
 
@@ -2895,6 +2882,7 @@ v424:Toggle({
     Justify = 'Center',
     Callback = function(p426)
         local v427 = game:GetService('CoreGui')
+
         if p426 then
             if not v427:FindFirstChild('GunW') then
                 local v428 = Instance.new('ScreenGui', v427)
